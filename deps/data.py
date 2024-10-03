@@ -12,7 +12,7 @@ def read_csv_data(file_path="data/raw/BX-Book-Ratings.csv"):
     return data
 
 
-def transform_data(data: DataFrame) -> Dataset:
+def transform_data_for_surprise(data: DataFrame) -> Dataset:
     reader = Reader(rating_scale=(1, 10))
     data_formatted = Dataset.load_from_df(
         data[["user_id", "isbn", "book_rating"]], reader
